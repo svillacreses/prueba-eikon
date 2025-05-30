@@ -172,7 +172,7 @@ const CrearFacturaButton = () => {
               >
                 Agregar Item +
               </CustomButton>
-              <span>(Doble click para las filas)</span>
+              <span>(Doble click para editar las filas)</span>
             </div>
           </div>
         </DialogContent>
