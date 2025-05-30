@@ -1,0 +1,157 @@
+{
+  "info": {
+    "_postman_id": "a17187b7-914a-49ec-98d9-722a5ef4cbce",
+    "name": "EIKON API",
+    "description": "Colección de Postman para testear los endpoints de la prueba técnica.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40210703"
+  },
+  "item": [
+    {
+      "name": "Crear Precio",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"producto_id\": 1,\n  \"tienda_id\": 1,\n  \"valor\": 90.99,\n  \"inicio\": \"2025-05-07T00:00:00\",\n  \"fin\": \"2025-05-20T23:59:59\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/precios",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "precios"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear Promoción",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Promo 10%\",\n  \"descuento\": 10,\n  \"inicio\": \"2025-05-07T00:00:00\",\n  \"fin\": \"2025-05-20T23:59:59\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/promociones",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "promociones"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Asociar Promoción",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"promocion_id\": 1,\n  \"tiendas\": [1, 2],\n  \"productos\": [1, 2, 3]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/asociar-promocion",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "asociar-promocion"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consultar Precio Final",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/precio-final?producto_id=1&tienda_id=1&fecha=2025-05-09T00:06:44",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "precio-final"],
+          "query": [
+            {
+              "key": "producto_id",
+              "value": "1"
+            },
+            {
+              "key": "tienda_id",
+              "value": "1"
+            },
+            {
+              "key": "fecha",
+              "value": "2025-05-09T00:06:44"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consultar Productos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/productos",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "productos"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consultar Tiendas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/tiendas",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "tiendas"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consultar Promociones",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/promociones",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "promociones"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
